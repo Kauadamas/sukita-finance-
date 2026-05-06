@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #8B5CF6;
+  --color-brand-orange: #F97316;
+  --color-bg-dark: #0F172A;
+  --color-card-dark: rgba(30, 41, 59, 0.7);
+  
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  @keyframes pulseRed {
+    0% { box-shadow: 0 0 5px rgba(255, 59, 59, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(255, 59, 59, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 59, 59, 0.4); }
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+
+  --animate-ring: ring 2s ease-in-out infinite;
+  --animate-pulse-red: pulseRed 1.2s infinite;
+  --animate-zoom-in: zoomIn 0.3s ease-out;
+  --animate-blink: blink 1s infinite;
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+@layer base {
+  html {
+    font-size: 14px; /* Reduced from default 16px */
+  }
+  
+  body {
+    @apply bg-[#0F172A] text-slate-100 antialiased font-sans;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.glass-purple {
+  @apply bg-purple-500/10 backdrop-blur-lg border border-purple-500/20;
+}
+
+.glass-orange {
+  @apply bg-orange-500/10 backdrop-blur-lg border border-orange-500/20;
+}
+
+.glass-yellow {
+  @apply bg-yellow-500/10 backdrop-blur-lg border border-yellow-500/20;
+}
+
+.glass-emerald {
+  @apply bg-emerald-500/10 backdrop-blur-lg border border-emerald-500/20;
+}
+
+.glass-red {
+  @apply bg-red-500/10 backdrop-blur-lg border border-red-500/20;
+}
